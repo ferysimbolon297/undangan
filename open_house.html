@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open House 2024: Kenali Budaya & Inovasi Perusahaan Kami</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header dengan gradient yang ramah */
+        header {
+            background: linear-gradient(135deg, #0066cc 0%, #00aaff 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .company-logo {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .logo-icon {
+            color: #ffcc00;
+            margin-right: 10px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .event-highlights {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .highlight-item i {
+            color: #ffcc00;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0066cc;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: #ffcc00;
+            border-radius: 2px;
+        }
+        
+        /* About Company */
+        .about-company {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        
+        .company-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .company-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .company-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .company-description h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #0066cc;
+        }
+        
+        .company-description p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Culture Values */
+        .culture-values {
+            margin-bottom: 4rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 5px solid #0066cc;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: #0066cc;
+            margin-bottom: 1.5rem;
+        }
+        
+        .value-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0066cc;
+        }
+        
+        /* Event Schedule */
+        .event-schedule {
+            margin-bottom: 4rem;
+        }
+        
+        .schedule-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            padding: 0.8rem 2rem;
+            background-color: #e6f2ff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0066cc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active {
+            background-color: #0066cc;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .schedule-item {
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            align-items: center;
+        }
+        
+        .schedule-time {
+            min-width: 120px;
+            font-weight: bold;
+            color: #0066cc;
+            font-size: 1.1rem;
+        }
+        
+        .schedule-desc {
+            flex: 1;
+            padding-left: 1.5rem;
+            border-left: 2px solid #e6f2ff;
+        }
+        
+        .schedule-desc h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        /* Registration */
+        .registration {
+            background-color: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 4rem;
+        }
+        
+        .registration-form {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 2rem auto 0;
+            background: linear-gradient(135deg, #0066cc 0%, #00aaff 100%);
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 102, 204, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+        }
+        
+        .footer-section p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: #ffcc00;
+            color: #003366;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #0066cc 0%, #00aaff 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+            z-index: 100;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .about-company {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .registration {
+                padding: 2rem;
+            }
+            
+            .event-highlights {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="company-logo">
+                    <i class="fas fa-building logo-icon"></i> INNOVATE CORP
+                </div>
+                <h1>Open House Perusahaan 2024</h1>
+                <p class="tagline">"Mengenal Lebih Dekat: Budaya, Inovasi, dan Masa Depan Bersama"</p>
+                
+                <div class="event-highlights">
+                    <div class="highlight-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>Sabtu, 7 Desember 2024</div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="far fa-clock"></i>
+                        <div>09:00 - 16:00 WIB</div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>Kantor Pusat Innovate Corp, Jakarta</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="about-company">
+            <div class="company-image">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Kantor Innovate Corp">
+            </div>
+            <div class="company-description">
+                <h3>Tentang Innovate Corp</h3>
+                <p>Innovate Corp adalah perusahaan teknologi terdepan yang berfokus pada pengembangan solusi inovatif untuk tantangan masa depan. Didirikan pada tahun 2010, kami telah berkembang dari startup kecil menjadi perusahaan dengan lebih dari 500 karyawan dan operasi di 5 negara.</p>
+                <p>Visi kami adalah menciptakan dunia yang lebih terhubung dan berkelanjutan melalui teknologi. Misi kami adalah mengembangkan solusi yang tidak hanya mengubah industri, tetapi juga memberikan dampak positif bagi masyarakat.</p>
+                <p>Open House ini adalah kesempatan langka untuk melihat langsung bagaimana kami bekerja, berinovasi, dan membangun masa depan bersama tim yang penuh semangat.</p>
+            </div>
+        </section>
+        
+        <section class="culture-values">
+            <div class="section-title">
+                <h2>Budaya Perusahaan Kami</h2>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Inovasi Berkelanjutan</h3>
+                    <p>Kami mendorong pemikiran out-of-the-box dan eksperimen yang bertanggung jawab untuk menciptakan solusi terdepan.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">Kolaborasi Terbuka</h3>
+                    <p>Kami percaya bahwa keragaman perspektif menghasilkan solusi yang lebih baik dan lebih kreatif.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Integritas Tinggi</h3>
+                    <p>Kami berkomitmen untuk bertindak etis dan transparan dalam semua aspek bisnis kami.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="value-title">Kesejahteraan Karyawan</h3>
+                    <p>Kami menciptakan lingkungan kerja yang mendukung pertumbuhan pribadi dan profesional setiap anggota tim.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="event-schedule">
+            <div class="section-title">
+                <h2>Jadwal Kegiatan</h2>
+            </div>
+            
+            <div class="schedule-tabs">
+                <button class="tab-btn active" data-tab="tour">Tur Kantor & Lab</button>
+                <button class="tab-btn" data-tab="workshop">Workshop & Demo</button>
+                <button class="tab-btn" data-tab="networking">Networking</button>
+            </div>
+            
+            <div id="tour" class="tab-content active">
+                <div class="schedule-item">
+                    <div class="schedule-time">09:00 - 10:30</div>
+                    <div class="schedule-desc">
+                        <h4>Tur Area Inovasi</h4>
+                        <p>Kunjungi lab penelitian dan pengembangan kami, lihat langsung proyek-proyek terbaru yang sedang dikerjakan.</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">10:30 - 12:00</div>
+                    <div class="schedule-desc">
+                        <h4>Tur Ruang Kerja Kolaboratif</h4>
+                        <p>Jelajahi ruang kerja yang dirancang untuk mendukung kreativitas dan kolaborasi tim.</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">13:30 - 15:00</div>
+                    <div class="schedule-desc">
+                        <h4>Tur Fasilitas Karyawan</h4>
+                        <p>Lihat ruang istirahat, area wellness, dan fasilitas pendukung lainnya untuk kesejahteraan karyawan.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="workshop" class="tab-content">
+                <div class="schedule-item">
+                    <div class="schedule-time">10:30 - 12:00</div>
+                    <div class="schedule-desc">
+                        <h4>Workshop Design Thinking</h4>
+                        <p>Pelajari metodologi yang kami gunakan untuk memecahkan masalah kompleks dengan solusi inovatif.</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">13:30 - 15:00</div>
+                    <div class="schedule-desc">
+                        <h4>Demo Produk Terbaru</h4>
+                        <p>Saksikan demonstrasi langsung produk dan teknologi terbaru yang akan segera diluncurkan.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="networking" class="tab-content">
+                <div class="schedule-item">
+                    <div class="schedule-time">12:00 - 13:30</div>
+                    <div class="schedule-desc">
+                        <h4>Networking Lunch</h4>
+                        <p>Makan siang bersama tim Innovate Corp, kesempatan untuk berinteraksi langsung dengan karyawan dari berbagai departemen.</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">15:00 - 16:00</div>
+                    <div class="schedule-desc">
+                        <h4>Sesi Tanya Jawab dengan Leadership</h4>
+                        <p>Dialog terbuka dengan para pemimpin perusahaan tentang strategi, budaya, dan masa depan Innovate Corp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="registration">
+            <div class="section-title">
+                <h2>Pendaftaran Open House</h2>
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem;">
+                Daftarkan diri Anda untuk menghadiri Open House Innovate Corp 2024. Acara ini gratis dan terbuka untuk umum, namun tempat terbatas. Pendaftaran akan ditutup pada 30 November 2024.
+            </p>
+            
+            <form id="openHouseForm" class="registration-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ohName">Nama Lengkap *</label>
+                        <input type="text" id="ohName" name="ohName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ohEmail">Email *</label>
+                        <input type="email" id="ohEmail" name="ohEmail" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ohPhone">Nomor Telepon *</label>
+                        <input type="tel" id="ohPhone" name="ohPhone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ohAffiliation">Afiliasi/Perusahaan *</label>
+                        <input type="text" id="ohAffiliation" name="ohAffiliation" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ohInterest">Apa yang paling Anda minati dari Open House ini? *</label>
+                    <select id="ohInterest" name="ohInterest" required>
+                        <option value="">Pilih minat utama</option>
+                        <option value="culture">Budaya Perusahaan & Lingkungan Kerja</option>
+                        <option value="innovation">Proses Inovasi & Proyek Terbaru</option>
+                        <option value="career">Peluang Karir di Innovate Corp</option>
+                        <option value="networking">Jaringan & Koneksi Profesional</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ohActivities">Kegiatan yang Ingin Diikuti (Dapat memilih lebih dari satu)</label>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">
+                        <div>
+                            <input type="checkbox" id="activity1" name="ohActivities" value="tour">
+                            <label for="activity1">Tur Kantor & Lab</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="activity2" name="ohActivities" value="workshop">
+                            <label for="activity2">Workshop Design Thinking</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="activity3" name="ohActivities" value="demo">
+                            <label for="activity3">Demo Produk Terbaru</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="activity4" name="ohActivities" value="networking">
+                            <label for="activity4">Networking Lunch</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="activity5" name="ohActivities" value="qna">
+                            <label for="activity5">Sesi Tanya Jawab dengan Leadership</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ohMessage">Pertanyaan atau Pesan Khusus (Opsional)</label>
+                    <textarea id="ohMessage" name="ohMessage" placeholder="Ada pertanyaan khusus atau kebutuhan aksesibilitas?"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Daftar Sekarang</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Innovate Corp</h3>
+                    <p>Menghubungkan ide, teknologi, dan manusia untuk menciptakan masa depan yang lebih baik.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Innovate Tower, Jl. Sudirman Kav. 1, Jakarta 10220</p>
+                    <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> openhouse@innovatecorp.id</p>
+                    <p><i class="fas fa-globe"></i> www.innovatecorp.id</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Informasi Lebih Lanjut</h3>
+                    <p>Untuk informasi tentang karir di Innovate Corp, kunjungi halaman karir kami.</p>
+                    <p>Untuk pertanyaan media dan partnership, hubungi partnership@innovatecorp.id</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2024 Innovate Corp. All rights reserved. | Open House 2024 "Mengenal Lebih Dekat: Budaya, Inovasi, dan Masa Depan Bersama"
+            </div>
+        </div>
+    </footer>
+    
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-volume-up"></i>
+    </div>
+
+    <!-- Audio untuk musik latar -->
+    <audio id="backgroundMusic" loop>
+        <!-- Ganti dengan file musik Anda -->
+        <source src="bisnis.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+    
+    <script>
+        // Tab switching untuk jadwal kegiatan
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Update active tab button
+                tabBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update active tab content
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === tabId) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Musik latar belakang
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const musicControl = document.getElementById('musicControl');
+        let isPlaying = false;
+        
+        // Coba putar musik secara otomatis
+        window.addEventListener('load', function() {
+            const playPromise = backgroundMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    isPlaying = true;
+                    musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }).catch(error => {
+                    console.log("Autoplay diblokir: ", error);
+                    musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                    musicControl.style.background = 'linear-gradient(135deg, #ffcc00, #ff9900)';
+                    musicControl.style.color = '#0066cc';
+                });
+            }
+        });
+        
+        // Kontrol musik
+        musicControl.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                musicControl.style.background = 'linear-gradient(135deg, #ffcc00, #ff9900)';
+                musicControl.style.color = '#0066cc';
+            } else {
+                backgroundMusic.play();
+                musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                musicControl.style.background = 'linear-gradient(135deg, #0066cc 0%, #00aaff 100%)';
+                musicControl.style.color = 'white';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Form pendaftaran
+        document.getElementById('openHouseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('ohName').value;
+            const email = document.getElementById('ohEmail').value;
+            const interest = document.getElementById('ohInterest').value;
+            
+            // Hitung kegiatan yang dipilih
+            const selectedActivities = document.querySelectorAll('input[name="ohActivities"]:checked');
+            const activityCount = selectedActivities.length;
+            
+            let message = `Terima kasih ${name}! Pendaftaran Anda untuk Open House Innovate Corp 2024 telah berhasil. `;
+            message += `Konfirmasi pendaftaran dan detail acara akan dikirim ke ${email}. `;
+            
+            if (activityCount > 0) {
+                message += `Anda telah memilih ${activityCount} kegiatan. Kami akan mengirimkan jadwal detail untuk kegiatan yang Anda pilih.`;
+            } else {
+                message += `Anda akan mendapatkan akses ke semua kegiatan yang tersedia.`;
+            }
+            
+            alert(message);
+            
+            // Reset form
+            document.getElementById('openHouseForm').reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Anakku!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a1c4fd);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #333;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 107, 181, 0.3);
+            margin-bottom: 30px;
+            border: 8px solid #ff6cb5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 3.5rem;
+            color: #ff4081;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 #ffd166;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            color: #5c6bc0;
+            margin-bottom: 20px;
+        }
+        
+        .heroes-section, .princess-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.5rem;
+            color: #ff9800;
+            margin-bottom: 20px;
+            width: 100%;
+            text-shadow: 2px 2px 0 #ffecb3;
+        }
+        
+        .character {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 5px solid;
+        }
+        
+        .character:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .superhero {
+            border-color: #3f51b5;
+        }
+        
+        .princess {
+            border-color: #e91e63;
+        }
+        
+        .character-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .character-name {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .superhero .character-name {
+            color: #3f51b5;
+        }
+        
+        .princess .character-name {
+            color: #e91e63;
+        }
+        
+        .birthday-info {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 8px dashed #4caf50;
+            position: relative;
+        }
+        
+        .birthday-info h2 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.8rem;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+        
+        .cake-container {
+            font-size: 5rem;
+            color: #ff9800;
+            margin: 20px 0;
+            animation: rotate 4s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .age {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #ff4081;
+            text-shadow: 4px 4px 0 #ffd166;
+            margin: 10px 0;
+        }
+        
+        .message {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #5d4037;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .music-player {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 5px solid #ff9800;
+        }
+        
+        .music-title {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2rem;
+            color: #ff9800;
+            margin-bottom: 15px;
+        }
+        
+        .music-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .music-btn {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+        
+        .music-btn:hover {
+            background-color: #ff5722;
+            transform: scale(1.1);
+        }
+        
+        footer {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            color: #5c6bc0;
+            font-size: 1.2rem;
+            border-top: 5px solid #5c6bc0;
+        }
+        
+        .balloons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 70px;
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        .balloon:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f44336;
+            animation: confettiFall 5s infinite linear;
+        }
+        
+        @keyframes confettiFall {
+            0% { transform: translateY(-100px) rotate(0); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.4rem; }
+            .section-title { font-size: 2rem; }
+            .age { font-size: 4rem; }
+            .character { width: 45%; }
+        }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .character { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Balon latar belakang -->
+    <div class="balloons" id="balloons-container"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Selamat Ulang Tahun!</h1>
+            <p class="subtitle">Hari yang penuh kegembiraan dan keajaiban!</p>
+            <div class="cake-container">
+                <i class="fas fa-birthday-cake"></i>
+            </div>
+        </header>
+        
+        <section class="birthday-info">
+            <h2>Hari ini adalah hari spesial!</h2>
+            <div class="age">5</div>
+            <p class="message">
+                Hari ini adalah hari ulang tahunmu yang ke-5! Dunia ini lebih cerah dengan kehadiranmu. 
+                Semoga hari ini dipenuhi dengan tawa, kebahagiaan, dan petualangan seru bersama superhero dan princess favoritmu!
+            </p>
+        </section>
+        
+        <section>
+            <h2 class="section-title">Superhero Pahlawan</h2>
+            <div class="heroes-section">
+                <div class="character superhero">
+                    <div class="character-icon">
+                        <i class="fas fa-mask"></i>
+                    </div>
+                    <h3 class="character-name">Superman</h3>
+                    <p>Pahlawan dengan kekuatan super dan hati yang baik</p>
+                </div>
+                
+                <div class="character superhero">
+                    <div class="character-icon">
+                        <i class="fas fa-spider"></i>
+                    </div>
+                    <h3 class="character-name">Spider-Man</h3>
+                    <p>Pahlawan yang lincah dan suka membantu</p>
+                </div>
+                
+                <div class="character superhero">
+                    <div class="character-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="character-name">The Flash</h3>
+                    <p>Pahlawan tercepat di dunia</p>
+                </div>
+                
+                <div class="character superhero">
+                    <div class="character-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="character-name">Captain America</h3>
+                    <p>Pahlawan dengan perisai yang kuat</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="section-title">Princess Cantik</h2>
+            <div class="princess-section">
+                <div class="character princess">
+                    <div class="character-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="character-name">Cinderella</h3>
+                    <p>Princess dengan hati yang baik dan impian yang indah</p>
+                </div>
+                
+                <div class="character princess">
+                    <div class="character-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3 class="character-name">Elsa</h3>
+                    <p>Ratu dengan kekuatan es yang menakjubkan</p>
+                </div>
+                
+                <div class="character princess">
+                    <div class="character-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3 class="character-name">Ariel</h3>
+                    <p>Putri duyung yang suka bernyanyi</p>
+                </div>
+                
+                <div class="character princess">
+                    <div class="character-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="character-name">Rapunzel</h3>
+                    <p>Princess dengan rambut panjang yang ajaib</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="music-player">
+            <h3 class="music-title">Musik Ulang Tahun Ceria</h3>
+            <div class="music-controls">
+                <button class="music-btn" id="playBtn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="music-btn" id="pauseBtn">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <button class="music-btn" id="stopBtn">
+                    <i class="fas fa-stop"></i>
+                </button>
+                <span style="font-size: 1.2rem; margin-left: 10px;">Putar musik ulang tahun!</span>
+            </div>
+            <audio id="birthdayAudio" loop>
+                <source src="ultah.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+        </section>
+        
+        <footer>
+            <p>Dibuat dengan penuh cinta untuk anak tersayang pada hari ulang tahunnya!</p>
+            <p>Semoga semua impian dan harapanmu menjadi kenyataan!</p>
+            <p><i class="fas fa-heart" style="color: #ff4081;"></i> Selamat Ulang Tahun! <i class="fas fa-heart" style="color: #ff4081;"></i></p>
+        </footer>
+    </div>
+
+    <script>
+        // Musik dan kontrol audio
+        const audio = document.getElementById('birthdayAudio');
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        
+        playBtn.addEventListener('click', () => {
+            audio.play();
+        });
+        
+        pauseBtn.addEventListener('click', () => {
+            audio.pause();
+        });
+        
+        stopBtn.addEventListener('click', () => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+        
+        // Membuat balon
+        const balloonsContainer = document.getElementById('balloons-container');
+        const colors = ['#ff4081', '#3f51b5', '#4caf50', '#ff9800', '#9c27b0'];
+        
+        for (let i = 0; i < 15; i++) {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            
+            // Warna acak
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.backgroundColor = color;
+            
+            // Posisi acak
+            balloon.style.left = `${Math.random() * 100}%`;
+            
+            // Animasi dengan delay acak
+            balloon.style.animationDelay = `${Math.random() * 15}s`;
+            balloon.style.animationDuration = `${10 + Math.random() * 20}s`;
+            
+            balloonsContainer.appendChild(balloon);
+        }
+        
+        // Membuat konfeti
+        for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            
+            // Warna acak
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.backgroundColor = color;
+            
+            // Posisi acak
+            confetti.style.left = `${Math.random() * 100}%`;
+            
+            // Animasi dengan delay acak
+            confetti.style.animationDelay = `${Math.random() * 5}s`;
+            confetti.style.animationDuration = `${3 + Math.random() * 7}s`;
+            
+            // Ukuran acak
+            const size = 5 + Math.random() * 10;
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size}px`;
+            
+            document.body.appendChild(confetti);
+        }
+        
+        // Animasi untuk karakter saat dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            const characters = document.querySelectorAll('.character');
+            
+            characters.forEach((character, index) => {
+                // Delay muncul bertahap
+                character.style.opacity = '0';
+                character.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    character.style.transition = 'opacity 0.5s, transform 0.5s';
+                    character.style.opacity = '1';
+                    character.style.transform = 'translateY(0)';
+                }, 300 + (index * 200));
+            });
+            
+            // Mulai musik otomatis (dengan interaksi pengguna)
+            document.body.addEventListener('click', function initAudio() {
+                // Coba putar audio
+                audio.play().then(() => {
+                    console.log('Musik ulang tahun dimulai!');
+                }).catch(e => {
+                    console.log('Autoplay diblokir, perlu interaksi pengguna');
+                });
+                
+                // Hapus event listener setelah diklik
+                document.body.removeEventListener('click', initAudio);
+            });
+        });
+    </script>
+</body>
+</html>

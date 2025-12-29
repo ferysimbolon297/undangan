@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Adat Jawa - Sinta & Joko</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-red: #8b0000;
+            --cream: #f5f1e6;
+            --brown: #5d4037;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif', serif;
+            color: var(--brown);
+            line-height: 1.6;
+            background-color: var(--cream);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235d4037' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .header {
+            background-color: var(--dark-red);
+            color: var(--gold);
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before, .header::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q25,5 50,10 T100,0 L100,10 L0,10 Z' fill='%23f5f1e6'/%3E%3C/svg%3E");
+            left: 0;
+        }
+        
+        .header::before {
+            top: 0;
+        }
+        
+        .header::after {
+            bottom: 0;
+            transform: rotate(180deg);
+        }
+        
+        .batik-border {
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background-image: url('https://cdn.pixabay.com/photo/2017/08/30/11/26/batik-2696885_1280.png');
+            background-size: contain;
+            background-repeat: repeat-x;
+            bottom: 0;
+            opacity: 0.7;
+        }
+        
+        .couple-names {
+            font-family: 'Crimson Text', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.5rem;
+            color: var(--dark-red);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: var(--gold);
+        }
+        
+        .intro-section {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 40px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--brown);
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--dark-red);
+            margin: 30px 0;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .quote::before, .quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--gold);
+            position: absolute;
+        }
+        
+        .quote::before {
+            left: 0;
+            top: -10px;
+        }
+        
+        .quote::after {
+            right: 0;
+            bottom: -20px;
+        }
+        
+        .event-details {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .event-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--dark-red);
+            position: relative;
+        }
+        
+        .event-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .event-card h3 {
+            font-size: 1.8rem;
+            color: var(--dark-red);
+            margin-bottom: 15px;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .event-card p {
+            margin-bottom: 10px;
+            color: var(--brown);
+        }
+        
+        .event-card .time {
+            font-weight: bold;
+            color: var(--dark-red);
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        .cultural-info {
+            background-color: rgba(139, 0, 0, 0.05);
+            border-radius: 10px;
+            padding: 40px;
+            margin-top: 50px;
+            border-left: 5px solid var(--gold);
+        }
+        
+        .cultural-info h3 {
+            font-size: 1.8rem;
+            color: var(--dark-red);
+            margin-bottom: 20px;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .cultural-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .gallery-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 40px;
+            margin-top: 30px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            border-radius: 5px;
+            overflow: hidden;
+            height: 180px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .rsvp-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-red);
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Noto Serif', serif;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background-color: white;
+        }
+        
+        .btn-submit {
+            background-color: var(--dark-red);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: background-color 0.3s;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .btn-submit:hover {
+            background-color: #a00;
+        }
+        
+        .footer {
+            background-color: var(--dark-red);
+            color: var(--gold);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0,0 Q25,5 50,0 T100,10 L100,10 L0,10 Z' fill='%23f5f1e6'/%3E%3C/svg%3E");
+            left: 0;
+            top: 0;
+        }
+        
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .family-names {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .event-details {
+                flex-direction: column;
+            }
+            
+            .intro-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="batik-border"></div>
+        <div class="container">
+            <h1 class="couple-names">Sinta & Joko</h1>
+            <p class="subtitle">NGAWIYO NGAWIYAH, NGLAKONI PAMOR KANG SINANDI</p>
+            <p style="font-size: 1.2rem; margin-top: 20px;">Sabtu Kliwon, 15 Juni 2024</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="section intro-section">
+            <h2 class="section-title">Undangan Pernikahan Adat Jawa</h2>
+            <p class="intro-text">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami dengan mengangkat adat dan tradisi Jawa.</p>
+            
+            <div class="quote">
+                "Mring peparingé Gusti Allah, kula paring patitis panjenengan sedaya, ngaturaken bingkisan anggèn kula ngundang panjenengan sedaya, kersané rawuh ing acara pawiwahan putra-putri kula."
+            </div>
+            
+            <p class="intro-text">Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami mengucapkan terima kasih.</p>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Jadwal Acara</h2>
+            <div class="event-details">
+                <div class="event-card">
+                    <div class="event-icon"><i class="fas fa-mosque"></i></div>
+                    <h3>Akad Nikah</h3>
+                    <p>Sabtu Kliwon, 15 Juni 2024</p>
+                    <p class="time">Pukul 07:00 - 09:00 WIB</p>
+                    <p>Masjid Al-Hidayah</p>
+                    <p>Jl. Raya Solo - Jogja KM 12, Karanganyar</p>
+                    <p style="margin-top: 15px; font-style: italic; color: var(--brown);">Tata cara akad nikah sesuai syariat Islam</p>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon"><i class="fas fa-people-arrows"></i></div>
+                    <h3>Siraman & Midodareni</h3>
+                    <p>Jumat Wage, 14 Juni 2024</p>
+                    <p class="time">Pukul 14:00 - 21:00 WIB</p>
+                    <p>Kediaman Mempelai Wanita</p>
+                    <p>Dusun Ngemplak, Desa Karangmojo, Karanganyar</p>
+                    <p style="margin-top: 15px; font-style: italic; color: var(--brown);">Tradisi siraman dan midodareni calon pengantin</p>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Panggih & Resepsi</h3>
+                    <p>Sabtu Kliwon, 15 Juni 2024</p>
+                    <p class="time">Pukul 10:00 - 14:00 WIB</p>
+                    <p>Pendhopo Agung Royal Palace</p>
+                    <p>Jl. Raya Solo - Surakarta KM 5, Solo</p>
+                    <p style="margin-top: 15px; font-style: italic; color: var(--brown);">Prosesi panggih dan resepsi pernikahan adat Jawa</p>
+                </div>
+            </div>
+            
+            <div class="cultural-info">
+                <h3>Tata Cara Adat Jawa</h3>
+                <p>Acara pernikahan ini akan mengikuti tata cara adat Jawa yang meliputi:</p>
+                <p>1. <strong>Siraman:</strong> Ritual pemandian calon pengantin sebagai simbol penyucian diri.</p>
+                <p>2. <strong>Midodareni:</strong> Malam sebelum pernikahan dimana calon pengantin wanita dijaga oleh keluarga.</p>
+                <p>3. <strong>Akad Nikah:</strong> Ijab qabul sesuai syariat Islam.</p>
+                <p>4. <strong>Panggih:</strong> Pertemuan pertama pengantin setelah akad dengan ritual balangan suruh, wijikan, dan sindur binayang.</p>
+                <p>5. <strong>Kacar-Kucur:</strong> Pemberian beras, biji-bijian, dan uang receh oleh pengantin pria kepada pengantin wanita.</p>
+                <p>6. <strong>Dulangan:</strong> Saling menyuapi antara pengantin pria dan wanita.</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Galeri Pra-Pernikahan</h2>
+            <div class="gallery-section">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://kelanavwjogja.com/images/artikel/membuat-momen-prapernikahan-yang-berkesan-di-jogja-76.jpeg" alt="Busana Adat Jawa">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://kelanavwjogja.com/images/artikel/membuat-momen-prapernikahan-yang-berkesan-di-jogja-76.jpeg" alt="Prewedding Adat">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/etklpvura7ifosqzqwd5.jpg" alt="Ritual Siraman">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Foto Prewedding">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Konfirmasi Kehadiran</h2>
+            <div class="rsvp-section">
+                <div class="rsvp-form">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap (Sesuai KTP)</label>
+                        <input type="text" id="name" placeholder="Masukkan nama lengkap">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="relationship">Hubungan dengan Mempelai</label>
+                        <select id="relationship">
+                            <option value="">Pilih hubungan</option>
+                            <option value="family">Keluarga</option>
+                            <option value="friend">Teman</option>
+                            <option value="colleague">Rekan Kerja</option>
+                            <option value="neighbor">Tetangga</option>
+                            <option value="other">Lainnya</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="attendance">Konfirmasi Kehadiran</label>
+                        <select id="attendance">
+                            <option value="">Pilih konfirmasi</option>
+                            <option value="full">Hadir semua acara (Siraman, Akad, Resepsi)</option>
+                            <option value="akad-resepsi">Hadir Akad & Resepsi saja</option>
+                            <option value="resepsi-only">Hadir Resepsi saja</option>
+                            <option value="no">Tidak dapat hadir</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests">Jumlah Tamu</label>
+                        <select id="guests">
+                            <option value="1">1 orang</option>
+                            <option value="2">2 orang</option>
+                            <option value="3">3 orang</option>
+                            <option value="4">4 orang</option>
+                            <option value="5">5 orang atau lebih</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Ucapan & Doa (Sangat kami harapkan)</label>
+                        <textarea id="message" rows="4" placeholder="Tuliskan ucapan dan doa untuk mempelai..."></textarea>
+                    </div>
+                    
+                    <button class="btn-submit" onclick="submitJavaneseRSVP()">KIRIM KONFIRMASI & UCAPAN</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami mengucapkan terima kasih.</p>
+            <p class="footer-text">"Sugeng rawuh, sugeng ndherek, mugi-mugi Gusti Allah paring berkah lan rahmat."</p>
+            <div class="family-names">
+                <p>Keluarga Besar</p>
+                <p>Bapak Sutrisno & Ibu Siti Aminah</p>
+                <p>Bapak Heru Santoso & Ibu Sri Wahyuni</p>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.9rem;">© 2024 Undangan Pernikahan Adat Jawa - Sinta & Joko</p>
+        </div>
+    </footer>
+
+    <script>
+        // RSVP form submission for Javanese wedding
+        function submitJavaneseRSVP() {
+            const name = document.getElementById('name').value;
+            const relationship = document.getElementById('relationship').value;
+            const attendance = document.getElementById('attendance').value;
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !relationship || !attendance) {
+                alert('Harap lengkapi data konfirmasi kehadiran');
+                return;
+            }
+            
+            let response = '';
+            
+            if (attendance === 'no') {
+                response = `Maturnuwun sanget ${name}. Panjenengan sampun paring konfirmasi. Mugi-mugi Gusti Allah paring berkah.`;
+            } else {
+                const attendanceText = attendance === 'full' ? 'semua acara (Siraman, Akad, Resepsi)' :
+                                      attendance === 'akad-resepsi' ? 'Akad & Resepsi saja' : 'Resepsi saja';
+                
+                response = `Maturnuwun sanget ${name}. Konfirmasi rawuh panjenengan ing ${attendanceText} kaliyan ${guests} tamu sampun kula cathet.`;
+                
+                if (message) {
+                    response += ` Ucapan lan doa panjenengan: "${message}"`;
+                }
+                
+                response += ` Sugeng rawuh, mugi-mugi Gusti Allah paring lancar.`;
+            }
+            
+            alert(response);
+            
+            // Reset form
+            document.getElementById('name').value = '';
+            document.getElementById('relationship').value = '';
+            document.getElementById('attendance').value = '';
+            document.getElementById('guests').value = '1';
+            document.getElementById('message').value = '';
+        }
+        
+        // Add some visual effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const eventCards = document.querySelectorAll('.event-card');
+            eventCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.8s, transform 0.8s';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 300 + (index * 200));
+            });
+            
+            // Animate gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.8)';
+                item.style.transition = 'opacity 0.6s, transform 0.6s';
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 500 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html>

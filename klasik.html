@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Klasik - Sarah & Ryan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #fefefe;
+            color: #333;
+            line-height: 1.6;
+            background-image: url('https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?q=80&w=1000');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .lace-border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f0e6d3' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0 20px;
+            position: relative;
+        }
+        
+        .couple-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #8b5a2b;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .divider {
+            width: 150px;
+            height: 2px;
+            background-color: #d4a762;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .divider::before, .divider::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #d4a762;
+            border-radius: 50%;
+            top: -4px;
+        }
+        
+        .divider::before {
+            left: 20px;
+        }
+        
+        .divider::after {
+            right: 20px;
+        }
+        
+        .invitation-title {
+            font-size: 1.8rem;
+            color: #555;
+            margin-bottom: 30px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+        
+        .main-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #8b5a2b;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .event-details {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .event-item {
+            text-align: center;
+            margin: 15px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .event-icon {
+            font-size: 2rem;
+            color: #d4a762;
+            margin-bottom: 10px;
+        }
+        
+        .event-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #8b5a2b;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            margin: 0 10px;
+            background-color: #f9f3e9;
+            padding: 15px;
+            border-radius: 5px;
+            min-width: 80px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #8b5a2b;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 5px;
+        }
+        
+        .rsvp-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #f9f3e9;
+            padding: 30px;
+            border-radius: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #8b5a2b;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+        }
+        
+        button {
+            background-color: #8b5a2b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 3px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #a4723a;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+        
+        .floral-decoration {
+            text-align: center;
+            font-size: 2rem;
+            color: #d4a762;
+            margin: 20px 0;
+            letter-spacing: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                margin-top: 10px;
+            }
+            
+            .couple-names {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 20px 10px;
+            }
+            
+            .event-details {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lace-border"></div>
+        
+        <header>
+            <div class="floral-decoration">❖ ❖ ❖</div>
+            <h1 class="couple-names">Sarah & Ryan</h1>
+            <div class="divider"></div>
+            <h2 class="invitation-title">Undangan Pernikahan</h2>
+            <div class="floral-decoration">✿ ✿ ✿</div>
+        </header>
+        
+        <section class="section">
+            <h2 class="section-title">Kepada Yth.</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 20px;">Bapak/Ibu/Saudara/i</p>
+            <p style="text-align: center; font-size: 1.1rem;">Dengan penuh rasa syukur dan bahagia, kami mengundang Anda untuk hadir dalam acara pernikahan kami.</p>
+        </section>
+        
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sarah & Ryan" class="main-image">
+        
+        <section class="section">
+            <h2 class="section-title">Save The Date</h2>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Hari</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Jam</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Menit</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Detik</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Acara Pernikahan</h2>
+            <div class="event-details">
+                <div class="event-item">
+                    <div class="event-icon"><i class="fas fa-church"></i></div>
+                    <h3>Akad Nikah</h3>
+                    <p>Sabtu, 15 Juni 2024</p>
+                    <p>Pukul 08:00 - 10:00 WIB</p>
+                    <p>Masjid Agung Al-Azhar</p>
+                    <p>Jl. Sisingamangaraja No. 2, Kebayoran Baru</p>
+                </div>
+                <div class="event-item">
+                    <div class="event-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3>Resepsi</h3>
+                    <p>Sabtu, 15 Juni 2024</p>
+                    <p>Pukul 11:00 - 14:00 WIB</p>
+                    <p>Ballroom Hotel Grand Hyatt</p>
+                    <p>Jl. M.H. Thamrin No. 28, Jakarta Pusat</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Konfirmasi Kehadiran</h2>
+            <div class="rsvp-form">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="form-group">
+                    <label for="attendance">Konfirmasi Kehadiran</label>
+                    <select id="attendance">
+                        <option value="">Pilih konfirmasi</option>
+                        <option value="yes">Ya, saya akan hadir</option>
+                        <option value="no">Maaf, tidak dapat hadir</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Jumlah Tamu</label>
+                    <select id="guests">
+                        <option value="1">1 orang</option>
+                        <option value="2">2 orang</option>
+                        <option value="3">3 orang</option>
+                        <option value="4">4 orang</option>
+                    </select>
+                </div>
+                <button onclick="submitRSVP()">Kirim Konfirmasi</button>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Terima kasih atas doa dan restunya.</p>
+            <p>Keluarga Besar Sarah & Ryan</p>
+            <p style="margin-top: 20px;">© 2024 Undangan Pernikahan Klasik - Sarah & Ryan</p>
+        </footer>
+    </div>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const weddingDate = new Date('June 15, 2024 08:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerHTML = days;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // RSVP form submission
+        function submitRSVP() {
+            const name = document.getElementById('name').value;
+            const attendance = document.getElementById('attendance').value;
+            const guests = document.getElementById('guests').value;
+            
+            if (!name || !attendance) {
+                alert('Harap isi nama lengkap dan konfirmasi kehadiran');
+                return;
+            }
+            
+            const message = attendance === 'yes' 
+                ? `Terima kasih ${name}, kami tunggu kehadiran Anda dengan ${guests} tamu.`
+                : `Terima kasih ${name}, atas konfirmasinya. Doa terbaik dari kami.`;
+            
+            alert(message);
+            
+            // Reset form
+            document.getElementById('name').value = '';
+            document.getElementById('attendance').value = '';
+            document.getElementById('guests').value = '1';
+        }
+        
+        // Add some visual effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.8s, transform 0.8s';
+            });
+            
+            setTimeout(() => {
+                sections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }, index * 200);
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>

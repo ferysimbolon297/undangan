@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Penting - Mohon Baca!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B8B;
+            --secondary: #6C63FF;
+            --accent: #FFD166;
+            --dark: #2D3047;
+            --light: #FFF9F0;
+            --gray: #8A8D93;
+            --danger: #FF4757;
+            --success: #2ED573;
+            --gradient: linear-gradient(135deg, #FF6B8B 0%, #6C63FF 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Overlay untuk efek misteri */
+        .mystery-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s;
+        }
+        
+        .access-modal {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalAppear 0.5s ease-out;
+        }
+        
+        @keyframes modalAppear {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .access-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        .access-subtitle {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .access-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .access-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 139, 0.2);
+        }
+        
+        .access-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            width: 100%;
+        }
+        
+        .access-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+        
+        .access-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .access-hint {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        .hint-btn {
+            background: transparent;
+            border: none;
+            color: var(--secondary);
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        
+        /* Header */
+        .warning-header {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border-left: 8px solid var(--danger);
+        }
+        
+        .warning-icon {
+            font-size: 3rem;
+            color: var(--danger);
+            margin-bottom: 15px;
+        }
+        
+        .warning-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        .warning-subtitle {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        
+        .card-content {
+            color: var(--gray);
+        }
+        
+        .card-highlight {
+            background-color: #FFF9E6;
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Timeline */
+        .timeline-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 800;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 23px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            background: var(--gradient);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        .timeline-time {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content {
+            color: var(--gray);
+        }
+        
+        /* Secret Location */
+        .location-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .location-reveal {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fdfcfb 0%, #f5f1ff 100%);
+            border-radius: var(--radius);
+            border: 2px dashed var(--secondary);
+            display: none;
+        }
+        
+        .location-reveal.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .location-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .location-address {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .location-map {
+            width: 100%;
+            height: 200px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin-top: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .location-map:after {
+            content: 'Peta Lokasi';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--gray);
+            font-weight: 600;
+        }
+        
+        .reveal-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        
+        .reveal-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+        
+        /* Confirmation */
+        .confirmation-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .confirmation-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .confirmation-btn {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            margin: 10px;
+        }
+        
+        .confirmation-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(46, 213, 115, 0.3);
+        }
+        
+        .confirmation-btn.no {
+            background: var(--danger);
+        }
+        
+        /* Music Controls */
+        .music-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .music-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .music-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background-color: var(--primary);
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .secret-code {
+            font-family: monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .warning-title {
+                font-size: 1.8rem;
+            }
+            
+            .access-modal {
+                padding: 30px 20px;
+            }
+            
+            .timeline:before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+            }
+            
+            .timeline-dot {
+                left: 13px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .warning-title {
+                font-size: 1.5rem;
+            }
+            
+            .card-title {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .confirmation-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Music Player (Hidden) -->
+    <audio id="birthdayAudio" loop autoplay>
+        <source src="ultah.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Access Modal -->
+    <div class="mystery-overlay" id="accessOverlay">
+        <div class="access-modal">
+            <div class="warning-icon">
+                <i class="fas fa-user-secret"></i>
+            </div>
+            <h2 class="access-title">Akses Rahasia Diperlukan kodenya: 1504AB</h2>
+            <p class="access-subtitle">Masukkan kode rahasia yang telah diberikan untuk mengakses informasi penting</p>
+            <input type="text" class="access-input" id="accessCode" placeholder="Masukkan kode akses" maxlength="6">
+            <button class="access-btn" id="submitCode">MASUK</button>
+            <p class="access-hint">Lupa kode? <button class="hint-btn" id="showHint">Tampilkan Petunjuk</button></p>
+            <div id="hintText" style="display: none; margin-top: 15px; padding: 10px; background: #FFF9E6; border-radius: 8px; font-size: 0.9rem;">
+                <p><strong>Petunjuk:</strong> Kode terdiri dari 6 karakter: tanggal ulang tahun (DDMM) + inisial nama (AB)</p>
+                <p><em>Contoh: Jika ulang tanggal 15 April (1504) dan nama Andi Budi (AB), maka kodenya: 1504AB</em></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Music Controls -->
+    <div class="music-controls">
+        <button class="music-btn" id="musicToggle">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+    
+    <!-- Main Content (Hidden until access granted) -->
+    <div class="container" id="mainContent">
+        <!-- Warning Header -->
+        <div class="warning-header">
+            <div class="warning-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h1 class="warning-title">PERHATIAN: INFORMASI RAHASIA!</h1>
+            <p class="warning-subtitle">
+                Informasi di bawah ini bersifat <strong>SANGAT RAHASIA</strong> dan hanya untuk tamu undangan. 
+                Dilarang keras membocorkan informasi ini kepada yang berulang tahun!
+            </p>
+        </div>
+        
+        <!-- Important Instructions -->
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-icon">
+                    <i class="fas fa-shush"></i>
+                </div>
+                <h3 class="card-title">Jaga Kerahasiaan</h3>
+                <p class="card-content">
+                    Kejutan akan gagal total jika informasi ini sampai diketahui oleh yang berulang tahun. 
+                    Jangan bicarakan rencana ini di depan mereka, melalui chat, atau media sosial.
+                </p>
+                <div class="card-highlight">
+                    <strong>Kode Rahasia:</strong> Gunakan kata kode "proyek kue" jika perlu membicarakan persiapan.
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <div class="card-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="card-title">Ketepatan Waktu</h3>
+                <p class="card-content">
+                    Datang <strong>tepat waktu</strong> sangat penting! Kita harus sudah siap sebelum yang berulang tahun tiba.
+                    Jika terlambat, Anda akan melewatkan momen kejutan.
+                </p>
+                <div class="card-highlight">
+                    <strong>Datang 30 menit lebih awal</strong> dari waktu yang ditentukan.
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <div class="card-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3 class="card-title">Bawa Hadiah</h3>
+                <p class="card-content">
+                    Bungkus hadiah dengan rapi dan sembunyikan saat masuk. 
+                    Kita akan menumpuk hadiah di ruang khusus sebelum kejutan.
+                </p>
+                <div class="card-highlight">
+                    <strong>Tips:</strong> Bawa kado dalam tas biasa agar tidak mencurigakan.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Timeline -->
+        <div class="timeline-section">
+            <h2 class="section-title">Jadwal Kejutan (H-0)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time">16:00 - 17:30</div>
+                    <div class="timeline-content">Tim dekorasi dan persiapan tiba di lokasi. Persiapan kue, dekorasi, dan sound system.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time">17:30 - 18:15</div>
+                    <div class="timeline-content">Tamu mulai berdatangan. Simpan hadiah di ruang khusus dan bersembunyi.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time">18:15 - 18:30</div>
+                    <div class="timeline-content">Posko terakhir. Semua tamu sudah harus bersembunyi dan siap.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time">18:30 - TEPAT</div>
+                    <div class="timeline-content">Yang berulang tahun tiba dengan pengalihan (dijemput oleh panitia).</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time">18:35 - MOMEN KEJUTAN</div>
+                    <div class="timeline-content">Saat pintu dibuka, semua berteriak "SELAMAT ULANG TAHUN!" secara serempak.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Secret Location -->
+        <div class="location-section">
+            <h2 class="section-title">Lokasi Rahasia Kejutan</h2>
+            <p>Informasi lokasi hanya boleh dibuka jika Anda sudah hafal atau mencatatnya. Jangan screenshot!</p>
+            
+            <button class="reveal-btn" id="revealLocation">
+                <i class="fas fa-map-marked-alt"></i> TAMPILKAN LOKASI RAHASIA
+            </button>
+            
+            <div class="location-reveal" id="locationReveal">
+                <h3 class="location-title">🎉 LOKASI PESTA KEJUTAN 🎉</h3>
+                <p class="location-address">
+                    <strong>Rooftop Garden - The Sky Lounge</strong><br>
+                    Jl. Merdeka No. 123, Lantai 15<br>
+                    Jakarta Pusat 10110<br>
+                    <br>
+                    <strong>Parkir:</strong> Gunakan parkir basement (lantai B2-B3)<br>
+                    <strong>Akses:</strong> Gunakan lift khusus ke lantai 15, beri kode "BDAY23" kepada security
+                </p>
+                
+                <div class="location-map">
+                    <!-- Placeholder for map -->
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--danger);">
+                    <i class="fas fa-exclamation-circle"></i> 
+                    <strong>PERINGATAN:</strong> Jangan gunakan Google Maps atau sejenisnya untuk navigasi ke lokasi ini jika yang berulang tahun memiliki akses ke akun Anda!
+                </p>
+            </div>
+        </div>
+        
+        <!-- Confirmation -->
+        <div class="confirmation-section">
+            <h2 class="confirmation-title">Konfirmasi Kehadiran & Kerahasiaan</h2>
+            <p>Saya berjanji akan menjaga kerahasiaan informasi ini dan akan hadir tepat waktu.</p>
+            <div style="margin-top: 25px;">
+                <button class="confirmation-btn" id="confirmYes">
+                    <i class="fas fa-check-circle"></i> SAYA BERJANJI & AKAN HADIR
+                </button>
+                <button class="confirmation-btn no" id="confirmNo">
+                    <i class="fas fa-times-circle"></i> MOHON MAAF, TIDAK BISA HADIR
+                </button>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <p>Informasi ini akan self-destruct dalam 24 jam setelah acara berlangsung</p>
+            <div class="secret-code">Kode Akses Hari Ini: <span id="dynamicCode">1504AB</span></div>
+            <p style="margin-top: 15px; font-size: 0.8rem;">© 2023 Tim Kejutan Ulang Tahun - Operasi Rahasia "Happy Birthday"</p>
+        </footer>
+    </div>
+
+    <script>
+        // Access Control System
+        const accessOverlay = document.getElementById('accessOverlay');
+        const mainContent = document.getElementById('mainContent');
+        const accessCodeInput = document.getElementById('accessCode');
+        const submitCodeBtn = document.getElementById('submitCode');
+        const showHintBtn = document.getElementById('showHint');
+        const hintText = document.getElementById('hintText');
+        const dynamicCode = document.getElementById('dynamicCode');
+        
+        // Set today's access code (can be changed)
+        const validCodes = ['1504AB', 'BDAY23', 'SURPRISE', 'HAPPYBD']; // Multiple valid codes
+        const todayCode = validCodes[0]; // Use the first one as today's code
+        
+        // Generate a semi-random code for display (changes daily)
+        function generateDailyCode() {
+            const date = new Date();
+            const day = date.getDate().toString().padStart(2, '0');
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const letters = ['AB', 'CD', 'EF', 'GH', 'IJ'][date.getDay()];
+            return day + month + letters;
+        }
+        
+        // Set the dynamic code display
+        dynamicCode.textContent = generateDailyCode();
+        
+        // Handle access code submission
+        submitCodeBtn.addEventListener('click', function() {
+            const enteredCode = accessCodeInput.value.trim().toUpperCase();
+            
+            if (validCodes.includes(enteredCode)) {
+                // Grant access
+                accessOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    accessOverlay.style.display = 'none';
+                    mainContent.style.opacity = '1';
+                    mainContent.style.transform = 'translateY(0)';
+                    
+                    // Create confetti effect
+                    createConfetti();
+                }, 500);
+                
+                // Log access (in a real app, this would send to server)
+                console.log(`Access granted with code: ${enteredCode} at ${new Date().toLocaleTimeString()}`);
+                
+                // Store in localStorage to remember access
+                localStorage.setItem('surpriseAccess', 'granted');
+                localStorage.setItem('accessTime', Date.now());
+            } else {
+                // Shake animation for wrong code
+                accessCodeInput.style.borderColor = 'var(--danger)';
+                accessCodeInput.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    accessCodeInput.style.animation = '';
+                }, 500);
+                
+                // Clear input after delay
+                setTimeout(() => {
+                    accessCodeInput.value = '';
+                }, 300);
+            }
+        });
+        
+        // Add shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Allow Enter key to submit
+        accessCodeInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                submitCodeBtn.click();
+            }
+        });
+        
+        // Show hint
+        showHintBtn.addEventListener('click', function() {
+            if (hintText.style.display === 'none' || hintText.style.display === '') {
+                hintText.style.display = 'block';
+                showHintBtn.textContent = 'Sembunyikan Petunjuk';
+            } else {
+                hintText.style.display = 'none';
+                showHintBtn.textContent = 'Tampilkan Petunjuk';
+            }
+        });
+        
+        // Check if access was already granted
+        window.addEventListener('load', function() {
+            const accessGranted = localStorage.getItem('surpriseAccess');
+            const accessTime = localStorage.getItem('accessTime');
+            const twentyFourHours = 24 * 60 * 60 * 1000;
+            
+            if (accessGranted === 'granted' && accessTime && (Date.now() - parseInt(accessTime)) < twentyFourHours) {
+                // Access was granted within last 24 hours
+                accessOverlay.style.display = 'none';
+                mainContent.style.opacity = '1';
+                mainContent.style.transform = 'translateY(0)';
+            } else {
+                // Clear old access
+                localStorage.removeItem('surpriseAccess');
+                localStorage.removeItem('accessTime');
+            }
+            
+            // Auto-play birthday music
+            playBirthdayMusic();
+        });
+        
+        // Birthday Music
+        const birthdayAudio = document.getElementById('birthdayAudio');
+        const musicToggle = document.getElementById('musicToggle');
+        let isPlaying = true;
+        
+        function playBirthdayMusic() {
+            // Try to play with user interaction
+            birthdayAudio.play().catch(e => {
+                console.log("Autoplay prevented, waiting for user interaction");
+                // Show instruction to click to play
+                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+                musicToggle.title = "Klik untuk memutar musik";
+                isPlaying = false;
+            });
+        }
+        
+        // Toggle music play/pause
+        musicToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                birthdayAudio.pause();
+                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+                musicToggle.title = "Putar musik ulang tahun";
+            } else {
+                birthdayAudio.play();
+                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+                musicToggle.title = "Jeda musik";
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Auto-play when user interacts with page (for browsers that block autoplay)
+        document.addEventListener('click', function initAudio() {
+            if (birthdayAudio.paused && !isPlaying) {
+                birthdayAudio.play();
+                isPlaying = true;
+                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+        }, { once: true });
+        
+        // Secret Location Reveal
+        const revealLocationBtn = document.getElementById('revealLocation');
+        const locationReveal = document.getElementById('locationReveal');
+        let locationRevealed = false;
+        
+        revealLocationBtn.addEventListener('click', function() {
+            if (!locationRevealed) {
+                locationReveal.classList.add('show');
+                revealLocationBtn.innerHTML = '<i class="fas fa-eye-slash"></i> SEMBUNYIKAN LOKASI';
+                locationRevealed = true;
+                
+                // Log that location was revealed
+                console.log(`Location revealed at ${new Date().toLocaleTimeString()}`);
+            } else {
+                locationReveal.classList.remove('show');
+                revealLocationBtn.innerHTML = '<i class="fas fa-map-marked-alt"></i> TAMPILKAN LOKASI RAHASIA';
+                locationRevealed = false;
+            }
+        });
+        
+        // Confirmation Buttons
+        const confirmYesBtn = document.getElementById('confirmYes');
+        const confirmNoBtn = document.getElementById('confirmNo');
+        
+        confirmYesBtn.addEventListener('click', function() {
+            alert('Terima kasih atas konfirmasi dan komitmen Anda! 🎉\n\nKami tidak bisa menunggu untuk melihat ekspresi terkejutnya!');
+            confirmYesBtn.innerHTML = '<i class="fas fa-check-double"></i> TERKONFIRMASI & SIAP!';
+            confirmYesBtn.style.background = '#27ae60';
+            confirmYesBtn.disabled = true;
+            
+            // Log confirmation
+            console.log(`User confirmed attendance at ${new Date().toLocaleTimeString()}`);
+        });
+        
+        confirmNoBtn.addEventListener('click', function() {
+            const reason = prompt('Mohon beri tahu alasan Anda tidak bisa hadir (opsional):');
+            alert(`Terima kasih telah memberi tahu. ${reason ? `Alasan: ${reason}` : 'Kami hargai kejujuran Anda.'}\n\nMeski tidak hadir, tolong tetap jaga kerahasiaan!`);
+            confirmNoBtn.innerHTML = '<i class="fas fa-user-times"></i> TIDAK HADIR (DIKONFIRMASI)';
+            confirmNoBtn.style.background = '#7f8c8d';
+            confirmNoBtn.disabled = true;
+            
+            // Log non-attendance
+            console.log(`User declined attendance at ${new Date().toLocaleTimeString()} ${reason ? `with reason: ${reason}` : ''}`);
+        });
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#FF6B8B', '#6C63FF', '#FFD166', '#2ED573', '#FF4757'];
+            const confettiCount = 100;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-20px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.opacity = '0';
+                document.body.appendChild(confetti);
+                
+                // Animate confetti
+                const animation = confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                    { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+                ], {
+                    duration: 2000 + Math.random() * 3000,
+                    delay: Math.random() * 1000
+                });
+                
+                // Remove confetti after animation
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        
+        // Add a subtle reminder notification every minute
+        setInterval(() => {
+            if (document.hidden) {
+                // Page is not visible, send browser notification if permitted
+                if (Notification.permission === "granted") {
+                    new Notification("🎉 Ingat Ulang Tahun Kejutan!", {
+                        body: "Jangan lupa acara kejutan hari ini! Jaga kerahasiaan!",
+                        icon: "https://img.icons8.com/color/96/000000/birthday-cake.png"
+                    });
+                }
+            }
+        }, 60000); // Every minute
+        
+        // Request notification permission
+        if ("Notification" in window && Notification.permission === "default") {
+            setTimeout(() => {
+                Notification.requestPermission();
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

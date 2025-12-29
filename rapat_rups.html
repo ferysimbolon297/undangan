@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapat Umum Pemegang Saham (RUPS) Tahunan 2024 - PT Maju Bersama Sejahtera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #1a365d;
+            color: white;
+            padding: 2rem 0;
+            border-bottom: 4px solid #2d74da;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .company-info h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .company-info .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .company-logo {
+            background-color: white;
+            color: #1a365d;
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        .company-logo .logo-text {
+            font-size: 1.8rem;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .meeting-type {
+            background-color: #2d74da;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        
+        main {
+            padding: 3rem 0;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            border-left: 4px solid #2d74da;
+        }
+        
+        h2 {
+            color: #1a365d;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .meeting-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .detail-icon {
+            background-color: #e8f0fe;
+            color: #2d74da;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .detail-content h3 {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+        
+        .detail-content p {
+            font-weight: 600;
+            color: #1a365d;
+        }
+        
+        .agenda-container {
+            margin-top: 1.5rem;
+        }
+        
+        .agenda-item {
+            display: flex;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .agenda-item:last-child {
+            border-bottom: none;
+        }
+        
+        .agenda-time {
+            min-width: 120px;
+            font-weight: 600;
+            color: #2d74da;
+        }
+        
+        .agenda-content {
+            flex: 1;
+        }
+        
+        .agenda-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        
+        .agenda-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .materials-list {
+            list-style-type: none;
+            margin-top: 1rem;
+        }
+        
+        .materials-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .materials-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .material-icon {
+            color: #2d74da;
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .material-name {
+            flex: 1;
+        }
+        
+        .download-btn {
+            background-color: #e8f0fe;
+            color: #2d74da;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .download-btn:hover {
+            background-color: #2d74da;
+            color: white;
+        }
+        
+        .attendance-form {
+            margin-top: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        button {
+            background-color: #1a365d;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2d74da;
+        }
+        
+        .notice-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+        }
+        
+        .notice-box h3 {
+            color: #ff8f00;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            font-weight: bold;
+            color: #2d74da;
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            width: 100%;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1a365d;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .company-info h1 {
+                font-size: 1.7rem;
+            }
+            
+            .meeting-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .agenda-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .agenda-time {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="company-info">
+                    <h1>Rapat Umum Pemegang Saham (RUPS) Tahunan 2024</h1>
+                    <p class="subtitle">PT Maju Bersama Sejahtera Tbk.</p>
+                    <div class="meeting-type">RUPS Tahunan</div>
+                </div>
+                <div class="company-logo">
+                    <div class="logo-text">MBS</div>
+                    <div>PT Maju Bersama Sejahtera Tbk.</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="card">
+            <h2>Informasi Rapat</h2>
+            <p>Dengan hormat, kami mengundang Bapak/Ibu Pemegang Saham PT Maju Bersama Sejahtera Tbk. untuk menghadiri Rapat Umum Pemegang Saham (RUPS) Tahunan Tahun 2024 yang akan diselenggarakan pada:</p>
+            
+            <div class="meeting-details">
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="detail-content">
+                        <h3>Hari & Tanggal</h3>
+                        <p>Rabu, 20 November 2024</p>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="detail-content">
+                        <h3>Waktu</h3>
+                        <p>10:00 - 14:00 WIB</p>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="detail-content">
+                        <h3>Tempat</h3>
+                        <p>Ballroom A, Hotel Grand Indonesia, Jakarta</p>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="detail-content">
+                        <h3>Pimpinan Rapat</h3>
+                        <p>Bapak Dr. Hendra Wijaya (Komisaris Utama)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Agenda Rapat</h2>
+            <div class="agenda-container">
+                <div class="agenda-item">
+                    <div class="agenda-time">09:30 - 10:00</div>
+                    <div class="agenda-content">
+                        <div class="agenda-title">Registrasi Peserta</div>
+                        <div class="agenda-desc">Pemeriksaan dokumen dan penandatanganan daftar hadir</div>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">10:00 - 10:15</div>
+                    <div class="agenda-content">
+                        <div class="agenda-title">Pembukaan Rapat</div>
+                        <div class="agenda-desc">Sambutan oleh Pimpinan Rapat dan penetapan notulen</div>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">10:15 - 11:00</div>
+                    <div class="agenda-content">
+                        <div class="agenda-title">Laporan Direksi</div>
+                        <div class="agenda-desc">Presentasi kinerja perusahaan tahun 2023 dan rencana tahun 2024</div>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">11:00 - 11:45</div>
+                    <div class="agenda-content">
+                        <div class="agenda-title">Laporan Komisaris</div>
+                        <div class="agenda-desc">Pengawasan atas kinerja Direksi dan tata kelola perusahaan</div>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">11:45 - 12:30</div>
+                    <div class="agenda-content">
+                        <div class="agenda-title">Pembahasan & Persetujuan</div>
+                        <div class="agenda-desc">Pembahasan dan pengambilan keputusan atas agenda rapat</div>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">12:30 - 13:00</div>
+                    <div class="agenda-content">
+                        <div class="agenda-title">Sesi Tanya Jawab</div>
+                        <div class="agenda-desc">Dialog terbuka dengan pemegang saham</div>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">13:00 - 14:00</div>
+                    <div class="agenda-content">
+                        <div class="agenda-title">Penutupan & Makan Siang</div>
+                        <div class="agenda-desc">Pembacaan keputusan rapat dan ramah tamah</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Dokumen Rapat</h2>
+            <p>Berikut adalah dokumen-dokumen yang akan dibahas dalam RUPS Tahunan 2024:</p>
+            
+            <ul class="materials-list">
+                <li>
+                    <div class="material-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="material-name">Laporan Tahunan 2023</div>
+                    <a href="#" class="download-btn">Unduh</a>
+                </li>
+                <li>
+                    <div class="material-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="material-name">Laporan Keuangan Audited 2023</div>
+                    <a href="#" class="download-btn">Unduh</a>
+                </li>
+                <li>
+                    <div class="material-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="material-name">Laporan GCG (Tata Kelola Perusahaan)</div>
+                    <a href="#" class="download-btn">Unduh</a>
+                </li>
+                <li>
+                    <div class="material-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="material-name">Rencana Penggunaan Laba & Dividen</div>
+                    <a href="#" class="download-btn">Unduh</a>
+                </li>
+                <li>
+                    <div class="material-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="material-name">Rencana Penunjukan Direksi & Komisaris</div>
+                    <a href="#" class="download-btn">Unduh</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Silakan mengisi formulir di bawah ini untuk konfirmasi kehadiran Anda dalam RUPS Tahunan 2024. Konfirmasi dapat dilakukan paling lambat 3 hari sebelum pelaksanaan rapat.</p>
+            
+            <form id="attendanceForm" class="attendance-form">
+                <div class="form-group">
+                    <label for="shareholderName">Nama Pemegang Saham *</label>
+                    <input type="text" id="shareholderName" name="shareholderName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="shareholderId">Nomor Identitas Pemegang Saham *</label>
+                    <input type="text" id="shareholderId" name="shareholderId" required placeholder="Nomor KTP/Passport">
+                </div>
+                
+                <div class="form-group">
+                    <label for="shareAmount">Jumlah Saham yang Dimiliki *</label>
+                    <input type="number" id="shareAmount" name="shareAmount" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attendanceMethod">Metode Kehadiran *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="attendanceDirect" name="attendanceMethod" value="direct" required>
+                            <label for="attendanceDirect">Hadir Langsung</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="attendanceProxy" name="attendanceMethod" value="proxy">
+                            <label for="attendanceProxy">Diwakilkan (Proxy)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="proxySection" style="display: none;">
+                    <label for="proxyName">Nama Perwakilan</label>
+                    <input type="text" id="proxyName" name="proxyName">
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestCount">Jumlah Tamu Pendamping (Maks. 1 orang)</label>
+                    <select id="guestCount" name="guestCount">
+                        <option value="0">0 - Tidak ada tamu pendamping</option>
+                        <option value="1">1 - Satu tamu pendamping</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialRequest">Permintaan Khusus (Diet, Aksesibilitas, dll.)</label>
+                    <input type="text" id="specialRequest" name="specialRequest" placeholder="Opsional">
+                </div>
+                
+                <button type="submit">Kirim Konfirmasi Kehadiran</button>
+            </form>
+            
+            <div class="notice-box">
+                <h3><i class="fas fa-exclamation-circle"></i> Catatan Penting</h3>
+                <p>1. Pemegang saham yang hadir wajib membawa bukti identitas asli (KTP/Passport) dan bukti kepemilikan saham.</p>
+                <p>2. Perwakilan (proxy) wajib membawa surat kuasa yang sah dan telah dilegalisasi.</p>
+                <p>3. Konfirmasi kehadiran dapat juga dilakukan via email ke <strong>rups@majubersamasejahtera.co.id</strong> atau telepon ke <strong>(021) 1234-5678 ext. 901</strong>.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">PT Maju Bersama Sejahtera Tbk.</div>
+                <div>
+                    <p>Gedung MBS Tower, Jl. Sudirman Kav. 52-53, Jakarta 12190</p>
+                    <p>Email: investor@majubersamasejahtera.co.id | Telp: (021) 1234-5678</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 PT Maju Bersama Sejahtera Tbk. Semua hak dilindungi undang-undang.
+            </div>
+        </div>
+    </footer>
+    
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-volume-up"></i>
+    </div>
+
+    <!-- Audio untuk musik latar -->
+    <audio id="backgroundMusic" loop>
+        <!-- Ganti dengan file musik Anda -->
+        <source src="bisnis.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+    
+    <script>
+        // Musik latar belakang
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const musicControl = document.getElementById('musicControl');
+        let isPlaying = false;
+        
+        // Coba putar musik secara otomatis
+        window.addEventListener('load', function() {
+            const playPromise = backgroundMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    isPlaying = true;
+                    musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }).catch(error => {
+                    console.log("Autoplay diblokir: ", error);
+                    musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                    musicControl.style.backgroundColor = '#2d74da';
+                });
+            }
+        });
+        
+        // Kontrol musik
+        musicControl.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                musicControl.style.backgroundColor = '#2d74da';
+            } else {
+                backgroundMusic.play();
+                musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                musicControl.style.backgroundColor = '#1a365d';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Tampilkan/menyembunyikan bagian perwakilan berdasarkan pilihan
+        const attendanceDirect = document.getElementById('attendanceDirect');
+        const attendanceProxy = document.getElementById('attendanceProxy');
+        const proxySection = document.getElementById('proxySection');
+        
+        attendanceDirect.addEventListener('change', function() {
+            if (this.checked) {
+                proxySection.style.display = 'none';
+                document.getElementById('proxyName').required = false;
+            }
+        });
+        
+        attendanceProxy.addEventListener('change', function() {
+            if (this.checked) {
+                proxySection.style.display = 'block';
+                document.getElementById('proxyName').required = true;
+            }
+        });
+        
+        // Form pendaftaran
+        document.getElementById('attendanceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const shareholderName = document.getElementById('shareholderName').value;
+            const attendanceMethod = document.querySelector('input[name="attendanceMethod"]:checked').value;
+            
+            let message = `Terima kasih ${shareholderName}! Konfirmasi kehadiran Anda untuk RUPS Tahunan 2024 telah berhasil.`;
+            
+            if (attendanceMethod === 'proxy') {
+                const proxyName = document.getElementById('proxyName').value;
+                message += ` Anda akan diwakilkan oleh ${proxyName}.`;
+            } else {
+                message += ` Kami menantikan kehadiran Anda secara langsung.`;
+            }
+            
+            message += ` Detail lebih lanjut akan dikirim via email.`;
+            
+            alert(message);
+            
+            // Reset form
+            document.getElementById('attendanceForm').reset();
+            proxySection.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

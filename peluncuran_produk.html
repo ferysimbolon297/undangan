@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluncuran Produk: QuantumDrive - Masa Depan Transportasi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0e17;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section dengan efek futuristik */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a1f3a 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(41, 196, 255, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 4rem 0;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00d4ff, #0088ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #a0a0ff;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #ffffff, #a0a0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .highlight {
+            color: #00d4ff;
+        }
+        
+        .countdown-container {
+            margin: 3rem 0;
+        }
+        
+        .countdown-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #a0a0ff;
+        }
+        
+        .countdown {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            background: rgba(0, 132, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem 1rem;
+            min-width: 100px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #00d4ff;
+            line-height: 1;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #a0a0ff;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #00d4ff, #0088ff);
+            color: #0a0e17;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* Product Preview */
+        .product-preview {
+            padding: 5rem 0;
+            background: rgba(10, 14, 23, 0.9);
+            position: relative;
+        }
+        
+        .product-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(41, 196, 255, 0.05) 0%, transparent 50%);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #00d4ff, #0088ff);
+            border-radius: 2px;
+        }
+        
+        .product-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .feature-desc {
+            color: #a0a0ff;
+            line-height: 1.6;
+        }
+        
+        /* Event Details */
+        .event-details {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a1f3a 100%);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .detail-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .detail-icon {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .detail-text {
+            color: #a0a0ff;
+        }
+        
+        /* Registration */
+        .registration {
+            padding: 5rem 0;
+            background: rgba(10, 14, 23, 0.9);
+            text-align: center;
+        }
+        
+        .registration-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #a0a0ff;
+        }
+        
+        input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #00d4ff;
+        }
+        
+        /* Footer */
+        footer {
+            background: #050811;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #00d4ff, #0088ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        .copyright {
+            color: #a0a0ff;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(90deg, #00d4ff, #0088ff);
+            color: #0a0e17;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+            z-index: 100;
+            font-size: 1.2rem;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+        }
+        
+        .shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -100px;
+        }
+        
+        .shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: 100px;
+            left: -50px;
+        }
+        
+        .shape:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 20%;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .countdown {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .countdown-item {
+                min-width: 80px;
+                padding: 1rem 0.5rem;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+            
+            .registration-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo">QUANTUMDRIVE</div>
+                <p class="tagline">Revolusi dalam Mobilitas Masa Depan</p>
+                <h1>Peluncuran <span class="highlight">QuantumDrive</span><br>Teknologi Transportasi Generasi Baru</h1>
+                <p style="max-width: 600px; margin-bottom: 2rem; color: #a0a0ff; font-size: 1.1rem;">
+                    Saksikan terobosan teknologi yang akan mengubah cara kita berpindah. QuantumDrive menghadirkan efisiensi energi tertinggi dengan kecepatan yang belum pernah dicapai sebelumnya.
+                </p>
+                
+                <div class="countdown-container">
+                    <div class="countdown-title">Peluncuran Dalam:</div>
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="days">00</div>
+                            <div class="countdown-label">Hari</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="hours">00</div>
+                            <div class="countdown-label">Jam</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="minutes">00</div>
+                            <div class="countdown-label">Menit</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="seconds">00</div>
+                            <div class="countdown-label">Detik</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#registration" class="cta-button">Daftar Sekarang</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Product Preview -->
+    <section class="product-preview">
+        <div class="container">
+            <h2 class="section-title">Teknologi Revolusioner</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #a0a0ff; font-size: 1.1rem;">
+                QuantumDrive bukan hanya kendaraan, tetapi sebuah terobosan dalam fisika terapan yang akan mengubah paradigma transportasi.
+            </p>
+            
+            <div class="product-features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Energi Quantum</h3>
+                    <p class="feature-desc">Memanfaatkan prinsip mekanika quantum untuk menghasilkan tenaga dengan efisiensi 95%, jauh melampaui teknologi konvensional.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="feature-title">Zero Emissions</h3>
+                    <p class="feature-desc">Tidak menghasilkan emisi karbon sama sekali. Ramah lingkungan dan berkelanjutan untuk masa depan bumi.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Kecepatan Tinggi</h3>
+                    <p class="feature-desc">Mencapai kecepatan 0-500 km/jam dalam 8 detik. Perjalanan antar kota menjadi lebih cepat dari sebelumnya.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI Navigation</h3>
+                    <p class="feature-desc">Sistem navigasi AI yang belajar dari lingkungan dan pengemudi untuk memberikan pengalaman berkendara terbaik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Event Details -->
+    <section class="event-details">
+        <div class="container">
+            <h2 class="section-title">Detail Acara</h2>
+            
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="detail-title">Tanggal</h3>
+                    <p class="detail-text">25 Desember 2024</p>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <h3 class="detail-title">Waktu</h3>
+                    <p class="detail-text">19:00 - 22:00 WIB</p>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="detail-title">Lokasi</h3>
+                    <p class="detail-text">Convention Center, BSD City, Tangerang</p>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="detail-title">Kapasitas</h3>
+                    <p class="detail-text">Terbatas untuk 500 tamu undangan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Registration -->
+    <section class="registration" id="registration">
+        <div class="container">
+            <h2 class="section-title">Daftar untuk Hadir</h2>
+            <p style="max-width: 600px; margin: 0 auto 1rem; color: #a0a0ff; font-size: 1.1rem;">
+                Dapatkan kesempatan menjadi yang pertama menyaksikan revolusi transportasi masa depan. Tempat terbatas.
+            </p>
+            
+            <div class="registration-form">
+                <form id="launchRegistrationForm">
+                    <div class="form-group">
+                        <label for="launchName">Nama Lengkap</label>
+                        <input type="text" id="launchName" name="launchName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="launchEmail">Email</label>
+                        <input type="email" id="launchEmail" name="launchEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="launchPhone">Nomor Telepon</label>
+                        <input type="tel" id="launchPhone" name="launchPhone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="launchCompany">Perusahaan / Institusi</label>
+                        <input type="text" id="launchCompany" name="launchCompany">
+                    </div>
+                    
+                    <button type="submit" class="cta-button" style="width: 100%; margin-top: 1rem;">Daftar Sekarang</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">QUANTUMDRIVE</div>
+            <p style="color: #a0a0ff; max-width: 600px; margin: 0 auto;">
+                QuantumDrive adalah merek dari Future Mobility Technologies, perusahaan teknologi yang berfokus pada pengembangan solusi transportasi berkelanjutan.
+            </p>
+            <div class="copyright">
+                &copy; 2024 Future Mobility Technologies. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-volume-up"></i>
+    </div>
+
+    <!-- Audio untuk musik latar -->
+    <audio id="backgroundMusic" loop>
+        <!-- Ganti dengan file musik Anda -->
+        <source src="bisnis.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+    
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const launchDate = new Date('December 25, 2024 19:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+            
+            if (timeLeft < 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
+            }
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        
+        // Update countdown setiap detik
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Musik latar belakang
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const musicControl = document.getElementById('musicControl');
+        let isPlaying = false;
+        
+        // Coba putar musik secara otomatis
+        window.addEventListener('load', function() {
+            const playPromise = backgroundMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    isPlaying = true;
+                    musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }).catch(error => {
+                    console.log("Autoplay diblokir: ", error);
+                    musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                    musicControl.style.background = 'linear-gradient(90deg, #ffcc00, #ff9900)';
+                });
+            }
+        });
+        
+        // Kontrol musik
+        musicControl.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                musicControl.style.background = 'linear-gradient(90deg, #ffcc00, #ff9900)';
+            } else {
+                backgroundMusic.play();
+                musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                musicControl.style.background = 'linear-gradient(90deg, #00d4ff, #0088ff)';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Form pendaftaran
+        document.getElementById('launchRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('launchName').value;
+            const email = document.getElementById('launchEmail').value;
+            
+            alert(`Terima kasih ${name}! Pendaftaran Anda untuk peluncuran QuantumDrive telah berhasil. E-ticket akan dikirim ke ${email} dalam waktu 1x24 jam.`);
+            
+            document.getElementById('launchRegistrationForm').reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar & Workshop: Transformasi Digital 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 5px solid #ffcc00;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo {
+            background-color: white;
+            color: #1e3c72;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .event-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-item i {
+            font-size: 1.5rem;
+            color: #ffcc00;
+        }
+        
+        main {
+            padding: 3rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ffcc00;
+        }
+        
+        .speakers {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .speaker {
+            text-align: center;
+        }
+        
+        .speaker-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid #f0f0f0;
+        }
+        
+        .speaker-name {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        
+        .speaker-title {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .agenda-list {
+            list-style-type: none;
+        }
+        
+        .agenda-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+        }
+        
+        .agenda-time {
+            font-weight: bold;
+            color: #1e3c72;
+            min-width: 120px;
+        }
+        
+        .agenda-desc {
+            flex: 1;
+        }
+        
+        form {
+            margin-top: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            width: 100%;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1e3c72;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .event-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">S&W</div>
+                <div>
+                    <h1>Seminar & Workshop: Transformasi Digital 2024</h1>
+                    <p class="subtitle">Mengoptimalkan Teknologi untuk Pertumbuhan Bisnis yang Berkelanjutan</p>
+                </div>
+            </div>
+            
+            <div class="event-info">
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                        <div class="info-label">Tanggal</div>
+                        <div class="info-value">15 November 2024</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <div class="info-label">Waktu</div>
+                        <div class="info-value">09:00 - 17:00 WIB</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <div class="info-label">Tempat</div>
+                        <div class="info-value">Grand Ballroom, Hotel Majestic Jakarta</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="content-grid">
+            <div>
+                <div class="card">
+                    <h2>Tentang Acara</h2>
+                    <p>Seminar dan Workshop Transformasi Digital 2024 merupakan acara profesional yang dirancang untuk membantu bisnis memahami dan mengimplementasikan strategi digital untuk pertumbuhan yang berkelanjutan. Acara ini menghadirkan pakar industri terkemuka yang akan membagikan wawasan, tren terbaru, dan studi kasus sukses.</p>
+                    <p>Dalam acara ini, peserta akan mendapatkan pemahaman mendalam tentang bagaimana teknologi seperti AI, IoT, dan Big Data dapat dioptimalkan untuk meningkatkan efisiensi operasional, memperluas pasar, dan menciptakan pengalaman pelanggan yang unggul.</p>
+                </div>
+                
+                <div class="card">
+                    <h2>Pembicara</h2>
+                    <div class="speakers">
+                        <div class="speaker">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Andi Wijaya" class="speaker-img">
+                            <div class="speaker-name">Dr. Andi Wijaya</div>
+                            <div class="speaker-title">CEO, Digital Innovation Group</div>
+                        </div>
+                        <div class="speaker">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Putri, M.Sc." class="speaker-img">
+                            <div class="speaker-name">Sarah Putri, M.Sc.</div>
+                            <div class="speaker-title">Head of AI Research, TechFuture Inc.</div>
+                        </div>
+                        <div class="speaker">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Budi Santoso, MBA" class="speaker-img">
+                            <div class="speaker-name">Budi Santoso, MBA</div>
+                            <div class="speaker-title">Digital Transformation Consultant</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>Agenda Acara</h2>
+                    <ul class="agenda-list">
+                        <li>
+                            <div class="agenda-time">09:00 - 09:30</div>
+                            <div class="agenda-desc">Registrasi & Pembukaan</div>
+                        </li>
+                        <li>
+                            <div class="agenda-time">09:30 - 10:30</div>
+                            <div class="agenda-desc">Keynote Speech: Tren Transformasi Digital 2024</div>
+                        </li>
+                        <li>
+                            <div class="agenda-time">10:30 - 12:00</div>
+                            <div class="agenda-desc">Workshop: Strategi Implementasi AI dalam Bisnis</div>
+                        </li>
+                        <li>
+                            <div class="agenda-time">12:00 - 13:00</div>
+                            <div class="agenda-desc">Istirahat & Networking Lunch</div>
+                        </li>
+                        <li>
+                            <div class="agenda-time">13:00 - 15:00</div>
+                            <div class="agenda-desc">Case Study: Transformasi Digital Perusahaan Nasional</div>
+                        </li>
+                        <li>
+                            <div class="agenda-time">15:00 - 16:30</div>
+                            <div class="agenda-desc">Panel Diskusi: Masa Depan Bisnis Digital</div>
+                        </li>
+                        <li>
+                            <div class="agenda-time">16:30 - 17:00</div>
+                            <div class="agenda-desc">Penutupan & Sertifikat</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div>
+                <div class="card">
+                    <h2>Pendaftaran</h2>
+                    <p>Daftarkan diri Anda sekarang untuk mengikuti acara ini. Tempat terbatas untuk 150 peserta pertama.</p>
+                    
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="fullName">Nama Lengkap *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Perusahaan/Institusi *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="position">Jabatan *</label>
+                            <input type="text" id="position" name="position" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ticketType">Jenis Tiket *</label>
+                            <select id="ticketType" name="ticketType" required>
+                                <option value="">Pilih jenis tiket</option>
+                                <option value="regular">Regular - Rp 750.000</option>
+                                <option value="earlybird">Early Bird - Rp 500.000 (hingga 31 Okt)</option>
+                                <option value="vip">VIP - Rp 1.250.000 (termasuk networking dinner)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit">Daftar Sekarang</button>
+                    </form>
+                    
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">* Setelah pendaftaran, invoice akan dikirim ke email Anda.</p>
+                </div>
+                
+                <div class="card">
+                    <h2>Informasi Penting</h2>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                            <i class="fas fa-check-circle" style="color: #2a5298; position: absolute; left: 0;"></i>
+                            <strong>Biaya termasuk:</strong> Materi seminar, sertifikat, coffee break, dan makan siang
+                        </li>
+                        <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                            <i class="fas fa-check-circle" style="color: #2a5298; position: absolute; left: 0;"></i>
+                            <strong>Pembatalan:</strong> Dapat dilakukan maksimal 7 hari sebelum acara
+                        </li>
+                        <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                            <i class="fas fa-check-circle" style="color: #2a5298; position: absolute; left: 0;"></i>
+                            <strong>Kontak:</strong> seminar@digitaltransform.id | 021-1234-5678
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DigitalTransform.id</div>
+                <div>
+                    <p>Jl. Sudirman No. 123, Jakarta Selatan</p>
+                    <p>Email: info@digitaltransform.id | Telp: 021-1234-5678</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Seminar & Workshop Transformasi Digital. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-volume-up"></i>
+    </div>
+
+    <!-- Audio untuk musik latar -->
+    <audio id="backgroundMusic" loop>
+        <!-- Ganti dengan file musik Anda -->
+        <source src="bisnis.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+    
+    <script>
+        // Musik latar belakang
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const musicControl = document.getElementById('musicControl');
+        let isPlaying = false;
+        
+        // Coba putar musik secara otomatis (dengan penanganan autoplay policy)
+        window.addEventListener('load', function() {
+            // Coba putar musik dengan promise
+            const playPromise = backgroundMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Musik berhasil diputar
+                    isPlaying = true;
+                    musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }).catch(error => {
+                    // Autoplay diblokir, tampilkan tombol untuk memutar manual
+                    console.log("Autoplay diblokir: ", error);
+                    musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                    musicControl.style.backgroundColor = '#ffcc00';
+                    musicControl.style.color = '#1e3c72';
+                });
+            }
+        });
+        
+        // Kontrol musik
+        musicControl.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                musicControl.style.backgroundColor = '#ffcc00';
+                musicControl.style.color = '#1e3c72';
+            } else {
+                backgroundMusic.play();
+                musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                musicControl.style.backgroundColor = '#1e3c72';
+                musicControl.style.color = 'white';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Form pendaftaran
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Ambil nilai form
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const ticketType = document.getElementById('ticketType').value;
+            
+            // Simulasi pengiriman data
+            alert(`Terima kasih ${fullName}! Pendaftaran Anda untuk acara Seminar & Workshop Transformasi Digital 2024 berhasil. Konfirmasi telah dikirim ke ${email}.`);
+            
+            // Reset form
+            document.getElementById('registrationForm').reset();
+        });
+    </script>
+</body>
+</html>

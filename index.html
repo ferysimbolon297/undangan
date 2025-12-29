@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Undangan Digital - Berbagai Jenis Undangan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #4a6fa5 0%, #2d3e5c 100%);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            color: #ffd166;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        main {
+            padding: 3rem 0;
+        }
+        
+        .categories {
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            color: #2d3e5c;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #4a6fa5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-title i {
+            color: #4a6fa5;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            padding: 1.5rem 1.5rem 0.5rem;
+        }
+        
+        .card-icon {
+            font-size: 2.2rem;
+            color: #4a6fa5;
+            margin-bottom: 0.8rem;
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2d3e5c;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-body {
+            padding: 0 1.5rem 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .card-desc {
+            color: #666;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .card-footer {
+            padding: 1rem 1.5rem;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4a6fa5 0%, #2d3e5c 100%);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #2d3e5c 0%, #4a6fa5 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(45, 62, 92, 0.2);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .featured {
+            border: 2px solid #ffd166;
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ffd166;
+            color: #2d3e5c;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #4a6fa5 0%, #2d3e5c 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(45, 62, 92, 0.3);
+            z-index: 100;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: #2d3e5c;
+            color: white;
+            padding: 2.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: #ffd166;
+        }
+        
+        .footer-section p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .music-info {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: white;
+            color: #2d3e5c;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+            z-index: 99;
+            display: none;
+            max-width: 250px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-envelope-open-text"></i>
+                <div>Portal Undangan Digital</div>
+            </div>
+            <h1>Kumpulan Template Undangan Digital</h1>
+            <p class="subtitle">Temukan berbagai jenis template undangan digital yang dapat disesuaikan dengan kebutuhan Anda. Dari pernikahan, ulang tahun, hingga acara bisnis formal.</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Kategori Undangan Pernikahan -->
+        <section class="categories" id="wedding">
+            <h2 class="category-title"><i class="fas fa-heart"></i> Undangan Pernikahan</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <h3 class="card-title">Undangan Pernikahan</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Template undangan pernikahan standar dengan desain elegan dan romantis, cocok untuk berbagai tema pernikahan.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3 class="card-title">Undangan Pernikahan Klasik</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Desain tradisional dengan sentuhan elegan klasik, menggunakan warna-warna timeless dan ornamen klasik.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="klasik.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card featured">
+                    <div class="featured-badge">POPULER</div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="card-title">Undangan Pernikahan Modern</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Desain kontemporer dengan layout minimalis, tipografi modern, dan warna-warna trendi yang cocok untuk pasangan muda.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="modern.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-mask"></i>
+                        </div>
+                        <h3 class="card-title">Undangan Pernikahan Adat/Tematik</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Template dengan sentuhan budaya daerah atau tema khusus seperti Jawa, Bali, Sunda, atau tema fantasy.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="adat.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="card-title">Undangan Pernikahan Animasi/Video</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Undangan interaktif dengan elemen animasi atau video background untuk pengalaman yang lebih menarik.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="animasi.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="card-title">Microsite Pernikahan</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Website lengkap untuk pernikahan dengan berbagai halaman: cerita cinta, galeri foto, informasi acara, dan ucapan.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="microsite.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Kategori Undangan Ulang Tahun -->
+        <section class="categories" id="birthday">
+            <h2 class="category-title"><i class="fas fa-birthday-cake"></i> Undangan Ulang Tahun</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-cake-candles"></i>
+                        </div>
+                        <h3 class="card-title">Undangan Ulang Tahun</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Template umum untuk undangan ulang tahun dengan desain ceria dan penuh warna, cocok untuk semua usia.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3 class="card-title">Ulang Tahun Anak</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Desain colorful dengan karakter kartun, cocok untuk pesta ulang tahun anak-anak dengan tema yang menyenangkan.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ultahanak.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3 class="card-title">Ulang Tahun Remaja/Young Adult</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Desain trendy dan kekinian yang sesuai dengan selera remaja dan young adult, dengan gaya yang lebih modern.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ultahremaja.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="card-title">Ulang Tahun Dewasa</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Desain elegan dan sofistikated untuk perayaan ulang tahun dewasa, cocok untuk acara formal atau semi-formal.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ultahdewasa.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card featured">
+                    <div class="featured-badge">SPESIAL</div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-surprise"></i>
+                        </div>
+                        <h3 class="card-title">Ulang Tahun Kejutan (Surprise Party)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Template dengan elemen kejutan dan misteri, dirancang khusus untuk merencanakan pesta ulang tahun kejutan.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ultahkejutan.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Kategori Undangan Acara Bisnis & Formal -->
+        <section class="categories" id="business">
+            <h2 class="category-title"><i class="fas fa-briefcase"></i> Undangan Acara Bisnis & Formal</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="card-title">Seminar & Workshop</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Template profesional untuk acara edukasi dengan fitur pendaftaran terintegrasi dan agenda acara yang jelas.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="seminar_workshop.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card featured">
+                    <div class="featured-badge">TERBARU</div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="card-title">Peluncuran Produk (Launching)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Desain futuristik dengan countdown timer untuk acara peluncuran produk baru yang spektakuler.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="peluncuran_produk.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="card-title">Open House Perusahaan</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Template untuk memperkenalkan budaya perusahaan dengan jadwal acara dan informasi lengkap tentang perusahaan.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="open_house.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="card-title">Rapat & RUPS</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">Template sederhana dan jelas dengan agenda acara terstruktur untuk rapat resmi perusahaan.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="rapat_rups.html" class="btn"><i class="fas fa-external-link-alt"></i> Buka Template</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Informasi Musik -->
+        <section class="categories">
+            <h2 class="category-title"><i class="fas fa-music"></i> Musik Latar</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3 class="card-title">Musik untuk Pernikahan</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">File musik romantis untuk mengiringi undangan pernikahan digital Anda.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="pernihakan.mp3" class="btn"><i class="fas fa-play"></i> Putar Musik</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3 class="card-title">Musik untuk Ulang Tahun</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">File musik ceria dan semangat untuk undangan ulang tahun digital.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="ultah.mp3" class="btn"><i class="fas fa-play"></i> Putar Musik</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3 class="card-title">Musik untuk Acara Bisnis</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-desc">File musik profesional untuk mengiringi undangan acara bisnis dan formal.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="bisnis.mp3" class="btn"><i class="fas fa-play"></i> Putar Musik</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Portal Ini</h3>
+                    <p>Portal ini menyediakan berbagai template undangan digital yang dapat digunakan secara gratis untuk keperluan pribadi dan bisnis.</p>
+                    <p>Semua template dapat disesuaikan dengan mudah sesuai kebutuhan Anda.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kategori Undangan</h3>
+                    <p><a href="#wedding" style="color: #ffd166; text-decoration: none;">Undangan Pernikahan</a></p>
+                    <p><a href="#birthday" style="color: #ffd166; text-decoration: none;">Undangan Ulang Tahun</a></p>
+                    <p><a href="#business" style="color: #ffd166; text-decoration: none;">Undangan Bisnis & Formal</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Instruksi Penggunaan</h3>
+                    <p>1. Pilih template yang sesuai dengan acara Anda</p>
+                    <p>2. Buka file HTML dan edit sesuai kebutuhan</p>
+                    <p>3. Ganti teks, gambar, dan warna sesuai preferensi</p>
+                    <p>4. Simpan dan bagikan undangan digital Anda</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2024 Portal Undangan Digital. Semua template dapat digunakan secara gratis untuk keperluan pribadi dan non-komersial.
+            </div>
+        </div>
+    </footer>
+    
+    <div class="music-control" id="musicControl">
+        <i class="fas fa-volume-up"></i>
+    </div>
+    
+    <div class="music-info" id="musicInfo">
+        Musik latar sedang diputar: "Melody for Invitation"
+    </div>
+
+    <!-- Audio untuk musik latar -->
+    <audio id="backgroundMusic" loop>
+        <!-- Ganti dengan file musik Anda -->
+        <source src="backgrou.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+    
+    <script>
+        // Musik latar belakang
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const musicControl = document.getElementById('musicControl');
+        const musicInfo = document.getElementById('musicInfo');
+        let isPlaying = false;
+        
+        // Coba putar musik secara otomatis
+        window.addEventListener('load', function() {
+            const playPromise = backgroundMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    isPlaying = true;
+                    musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    showMusicInfo();
+                }).catch(error => {
+                    console.log("Autoplay diblokir: ", error);
+                    musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                    musicControl.style.background = 'linear-gradient(135deg, #ffd166, #ffb347)';
+                    musicControl.style.color = '#2d3e5c';
+                });
+            }
+        });
+        
+        // Kontrol musik
+        musicControl.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicControl.innerHTML = '<i class="fas fa-play"></i>';
+                musicControl.style.background = 'linear-gradient(135deg, #ffd166, #ffb347)';
+                musicControl.style.color = '#2d3e5c';
+            } else {
+                backgroundMusic.play();
+                musicControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+                musicControl.style.background = 'linear-gradient(135deg, #4a6fa5 0%, #2d3e5c 100%)';
+                musicControl.style.color = 'white';
+                showMusicInfo();
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Tampilkan info musik
+        function showMusicInfo() {
+            musicInfo.style.display = 'block';
+            setTimeout(() => {
+                musicInfo.style.display = 'none';
+            }, 3000);
+        }
+        
+        // Smooth scroll untuk link anchor
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Tambahkan efek hover untuk semua kartu
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('featured')) {
+                    this.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Tambahkan tanggal dan waktu di footer
+        const date = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = date.toLocaleDateString('id-ID', options);
+        
+        const dateElement = document.createElement('p');
+        dateElement.textContent = `Diakses pada: ${dateString}`;
+        dateElement.style.opacity = '0.7';
+        dateElement.style.fontSize = '0.85rem';
+        dateElement.style.marginTop = '1rem';
+        
+        document.querySelector('.copyright').parentNode.insertBefore(dateElement, document.querySelector('.copyright'));
+    </script>
+</body>
+</html>
